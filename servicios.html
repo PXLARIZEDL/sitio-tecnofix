@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios y precios | TecnoFix RD</title>
+    <meta name="description" content="Lista de servicios y precios de TecnoFix RD: limpieza, cambio de pantalla, teclado, batería, SSD y memoria RAM para laptops y PC.">
+</head>
+<body>
+    <header>
+        <h1>Servicios y precios</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="servicios">
+            <h2>Lo que reparamos</h2>
+            <!-- lista sin orden, la sublista va dentro del li -->
+            <ul>
+                <li>Laptops
+                    <ul>
+                        <li>Cambio de pantalla</li>
+                        <li>Cambio de teclado</li>
+                        <li>Cambio de batería</li>
+                    </ul>
+                </li>
+                <li>Computadoras de escritorio
+                    <ul>
+                        <li>Cambio de fuente de poder</li>
+                        <li>Instalación de tarjeta de video</li>
+                    </ul>
+                </li>
+                <li>Mejoras para cualquier equipo
+                    <ul>
+                        <li>Disco SSD</li>
+                        <li>Memoria RAM</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="como-pedir">
+            <h2>Cómo pedir una reparación</h2>
+            <!-- los pasos van en orden, con letras -->
+            <ol type="A">
+                <li>Escríbenos o llena el formulario de contacto.</li>
+                <li>Trae el equipo al taller con su cargador.</li>
+                <li>Te enviamos el diagnóstico y el precio por WhatsApp.</li>
+                <li>Si estás de acuerdo, lo reparamos y te avisamos para buscarlo.</li>
+            </ol>
+        </section>
+
+        <section id="glosario">
+            <h2>Palabras que vas a oír en el taller</h2>
+            <dl>
+                <dt>SSD</dt>
+                <dd>Disco de estado sólido. Es mucho más rápido que el disco duro mecánico de antes.</dd>
+                <dt>Pasta térmica</dt>
+                <dd>Crema que va entre el procesador y el disipador para sacar el calor.</dd>
+                <dt>Placa madre</dt>
+                <dd>La tarjeta principal donde se conectan todas las piezas de la computadora.</dd>
+                <dt>Diagnóstico</dt>
+                <dd>La revisión que hacemos para saber qué tiene el equipo antes de repararlo.</dd>
+            </dl>
+        </section>
+
+        <section id="precios">
+            <h2>Tabla de precios</h2>
+            <!-- tabla solo para datos, nada de maquetar con ella -->
+            <table>
+                <caption>Precios de mano de obra en pesos dominicanos (RD$), octubre 2026</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Servicio</th>
+                        <th scope="col">Tipo de equipo</th>
+                        <th scope="col">Tiempo de entrega</th>
+                        <th scope="col">Precio (RD$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Limpieza interna y pasta térmica</th>
+                        <td rowspan="3">Laptop</td>
+                        <td>1 día</td>
+                        <td>1,500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cambio de pantalla</th>
+                        <td>2 días</td>
+                        <td>2,000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cambio de teclado</th>
+                        <td>1 día</td>
+                        <td>1,200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cambio de fuente de poder</th>
+                        <td>PC de escritorio</td>
+                        <td>1 día</td>
+                        <td>800</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Instalación de SSD con Windows</th>
+                        <td>Laptop o PC</td>
+                        <td>1 día</td>
+                        <td>1,800</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Instalación de memoria RAM</th>
+                        <td>Laptop o PC</td>
+                        <td>Mismo día</td>
+                        <td>500</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="3">Diagnóstico (gratis si se hace la reparación)</th>
+                        <td>300</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p><a href="media/precios-tecnofix.csv" download>Descargar la lista de precios</a></p>
+        </section>
+
+        <section id="multimedia">
+            <h2>Nuestro trabajo</h2>
+            <figure>
+                <img src="https://placehold.co/600x400/png?text=Laptop+abierta" alt="Laptop abierta sobre la mesa del taller con el ventilador y la placa madre a la vista" width="600" height="400">
+                <figcaption>Limpieza interna de una laptop HP antes de cambiarle la pasta térmica.</figcaption>
+            </figure>
+            <figure>
+                <img src="https://placehold.co/600x400/png?text=SSD+y+RAM" alt="Un disco SSD de 512 GB al lado de dos memorias RAM de 8 GB" width="600" height="400">
+                <figcaption>Piezas listas para mejorar una laptop lenta.</figcaption>
+            </figure>
+
+            <h3>Video: limpieza paso a paso</h3>
+            <video controls width="640" height="360">
+                <source src="media/limpieza-laptop.mp4" type="video/mp4">
+                Tu navegador no puede reproducir este video.
+            </video>
+
+            <h3>Zona donde damos servicio a domicilio</h3>
+            <!-- el iframe lleva title para que se sepa qué es -->
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-69.98%2C18.44%2C-69.86%2C18.51&amp;layer=mapnik" title="Mapa de Santo Domingo, zona de servicio a domicilio de TecnoFix RD" width="600" height="400"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ricardo Pimentel · Matrícula 2023-3776</p>
+        <p><small>Sitio hecho para ISW-311 Tecnologías de Internet I.</small></p>
+    </footer>
+</body>
+</html>
