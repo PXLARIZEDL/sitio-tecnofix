@@ -25,9 +25,20 @@ Sitio de tres páginas en HTML5 para TecnoFix RD, un taller de reparación de co
 | Enlaces | contacto.html, "Escríbenos o llámanos"; servicios.html, "Tabla de precios"; el `nav` de las tres | `a` con `mailto:`, `tel:`, `#formulario`, `download`, `target="_blank" rel="noopener"` | El `mailto:` abre el correo y el `tel:` llama directo desde el celular. El `#formulario` baja a la sección del formulario. El `download` baja la lista de precios en CSV. El de HP es externo, abre en otra pestaña para no sacar a la persona del sitio y `noopener` es por seguridad. |
 | Imágenes y multimedia | servicios.html, "Nuestro trabajo" | `figure`, `figcaption`, `img` con `alt`, `video` con `controls` y `source`, `iframe` con `title` | Las fotos van en `figure` porque tienen su explicación en `figcaption`. El `alt` dice lo que se ve para quien no puede ver la imagen. El video tiene `controls` para que el usuario lo maneje y `source` con el tipo. El mapa es un `iframe` y lleva `title` para que el lector de pantalla sepa qué es. |
 | Tablas | servicios.html, "Tabla de precios" | `table`, `caption`, `thead`, `tbody`, `tfoot`, `th scope="col"`, `th scope="row"`, `rowspan`, `colspan` | Los precios son datos con filas y columnas, por eso tabla. El `caption` dice de qué es, `scope` dice si el encabezado es de columna o de fila. "Laptop" y "PC de escritorio" usan `rowspan` porque se repiten en varias filas y el diagnóstico en el `tfoot` usa `colspan` porque no necesita tipo ni tiempo. |
-| Formularios | contacto.html, "Agenda tu reparación" | `form`, `fieldset`, `legend`, `label`, `input` (text, email, tel, password, number, date, time, range, file, radio, checkbox), `select` con `optgroup`, `textarea`, `button type="submit"` | Separé el formulario en dos `fieldset`: los datos de la persona y los del equipo. Cada `label` tiene `for` igual al `id` del campo para que al tocar el texto se active el campo. Uso `required`, `minlength`, `maxlength`, `pattern` en el teléfono y `min`/`max` en la fecha, hora, cantidad y urgencia para que el navegador valide solo. |
+| Formularios | contacto.html, "Agenda tu reparación" | `form`, `fieldset`, `legend`, `label`, `input` (text, email, tel, password, number, date, time, range, file, radio, checkbox), `select` con `optgroup`, `textarea`, `button type="submit"` | Separé el formulario en dos `fieldset`: los datos de la persona y los del equipo. Los servicios del `select` están agrupados con `optgroup` (Laptop, PC de escritorio, Mejoras y Software y archivos) para que sea más fácil encontrar el que uno busca. Las marcas van en `radio` porque se elige una sola. Cada `label` tiene `for` igual al `id` del campo para que al tocar el texto se active el campo. Uso `required`, `minlength`, `maxlength`, `pattern` en el teléfono y `min`/`max` en la fecha, hora, cantidad y urgencia para que el navegador valide solo. |
 | Semántica y div/span | Las tres | `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `time`, `address`, `details`/`summary` | No usé `div` porque todo tenía una etiqueta con significado. La noticia es `article` porque se entiende sola, el consejo es `aside` porque es aparte del tema principal, las fechas van en `time` con `datetime`, la dirección del taller en `address` y las preguntas frecuentes en `details`/`summary` para que se abran al tocarlas. |
+
+## Cómo ver el sitio
+
+- En línea: abrir https://pxlarizedl.github.io/sitio-tecnofix/
+- En mi computadora: abrir `index.html` en el navegador o usar la extensión Live Server de VS Code. Desde el menú se llega a las otras dos páginas.
 
 ## Validación
 
 Las tres páginas pasan [validator.w3.org](https://validator.w3.org/nu/) sin errores.
+
+## Lo que aprendí
+
+- Que antes de poner un `div` hay que buscar si existe una etiqueta con significado, casi siempre la hay.
+- Que el validador te dice la línea exacta del error. Me pasó con el `select`: si es `required`, la primera opción no puede estar dentro de un `optgroup`.
+- Que el `alt` tiene que describir lo que se ve, no decir "imagen".
