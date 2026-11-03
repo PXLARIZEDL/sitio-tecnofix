@@ -81,13 +81,20 @@
                                 <option value="limpieza">Limpieza interna</option>
                                 <option value="pantalla">Cambio de pantalla</option>
                                 <option value="teclado">Cambio de teclado</option>
+                                <option value="bateria">Cambio de batería</option>
                             </optgroup>
                             <optgroup label="PC de escritorio">
                                 <option value="fuente">Cambio de fuente de poder</option>
+                                <option value="video">Instalación de tarjeta de video</option>
                             </optgroup>
                             <optgroup label="Mejoras">
                                 <option value="ssd">Instalación de SSD</option>
                                 <option value="ram">Instalación de memoria RAM</option>
+                            </optgroup>
+                            <!-- puse los mismo servicios nuevos q estan en la tabla de precio -->
+                            <optgroup label="Software y archivos">
+                                <option value="formateo">Formateo e instalación de Windows</option>
+                                <option value="recuperacion">Recuperación de archivos</option>
                             </optgroup>
                         </select>
                     </p>
@@ -100,6 +107,11 @@
                         <label for="marca-dell">Dell</label>
                         <input type="radio" id="marca-lenovo" name="marca" value="lenovo">
                         <label for="marca-lenovo">Lenovo</label>
+                        <!-- acer y asus tambien llegan bastante al tayer -->
+                        <input type="radio" id="marca-acer" name="marca" value="acer">
+                        <label for="marca-acer">Acer</label>
+                        <input type="radio" id="marca-asus" name="marca" value="asus">
+                        <label for="marca-asus">ASUS</label>
                         <input type="radio" id="marca-otra" name="marca" value="otra">
                         <label for="marca-otra">Otra</label>
                     </p>
