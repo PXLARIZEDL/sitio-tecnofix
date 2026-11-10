@@ -59,3 +59,83 @@ iframe {
     max-width: 100%;
     border: 1px solid var(--color-borde);
 }
+
+/* 3. Layout */
+/* el body e una grilla de 3 filas (header, contenido, footer) asi el footer queda siempre abajo */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* header con flexbox: el titulo a la izquierda y el menu con el boton a la derecha */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio);
+    padding: var(--espacio);
+    background-color: var(--color-suave);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+header h1 {
+    margin: 0 auto 0 0;
+    color: var(--color-principal);
+}
+
+.menu {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 6px 12px;
+    border-radius: var(--radio);
+}
+
+/* el boton de menu solo sale en el celular */
+.menu-boton {
+    display: none;
+}
+
+/* min-width 0 pa q la tabla o el mapa no estiren la grilla */
+main {
+    min-width: 0;
+    padding: var(--espacio);
+}
+
+/* en la portada el main y el aside van en 2 columnas */
+.portada {
+    grid-template-columns: 2fr 1fr;
+}
+
+.portada header,
+.portada footer {
+    grid-column: 1 / -1;
+}
+
+aside {
+    align-self: start;
+    min-width: 0;
+    margin: var(--espacio);
+    padding: var(--espacio);
+    background-color: var(--color-suave);
+    border-radius: var(--radio);
+}
+
+footer {
+    padding: var(--espacio);
+    text-align: center;
+    background-color: var(--color-suave);
+    border-top: 1px solid var(--color-borde);
+}
+
+footer p {
+    margin: 4px 0;
+}
