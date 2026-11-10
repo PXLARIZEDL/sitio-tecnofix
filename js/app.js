@@ -131,3 +131,119 @@ if (listaTarjetas) {
     buscador.addEventListener("input", filtrarCatalogo);
     filtroCategoria.addEventListener("change", filtrarCatalogo);
 }
+
+// ---------- 6. Validacion del formulario (contacto.html) ----------
+const formulario = document.querySelector(".formulario");
+const mensajeExito = document.querySelector(".exito");
+
+// escribe el mensaje en el span del error y le pone la clase invalido al campo
+function mostrarError(idError, mensaje) {
+    document.getElementById(idError).textContent = mensaje;
+    formulario.querySelectorAll(`[aria-describedby="${idError}"]`).forEach(function (campo) {
+        campo.classList.add("invalido");
+    });
+}
+
+// borra el mensaje y quita la clase invalido
+function limpiarError(idError) {
+    document.getElementById(idError).textContent = "";
+    formulario.querySelectorAll(`[aria-describedby="${idError}"]`).forEach(function (campo) {
+        campo.classList.remove("invalido");
+    });
+}
+
+// regla propia 1: telefono dominicano, empieza con 809, 829 o 849 y 7 numeros mas
+function validarTelefono(telefono) {
+    return /^(809|829|849)-?[0-9]{3}-?[0-9]{4}$/.test(telefono.trim());
+}
+
+// regla propia 2: la fecha no puede ser antes de hoy
+function esFechaPasada(texto) {
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    return new Date(texto + "T00:00") < hoy;
+}
+
+// regla propia 3: los domingos el taller ta cerrado
+function esDomingo(texto) {
+    return new Date(texto + "T00:00").getDay() === 0;
+}
+
+// revisa campo x campo, si algo ta mal pone el error y devuelve false
+function validarFormulario() {
+    const datos = formulario.elements;
+    let valido = true;
+
+    if (datos.nombre.value.trim().length < 3) {
+        mostrarError("error-nombre", "Escribe tu nombre completo (mínimo 3 letras).");
+        valido = false;
+    }
+
+    if (datos.correo.value.trim() === "" || !datos.correo.validity.valid) {
+        mostrarError("error-correo", "Escribe un correo válido, por ejemplo nombre@gmail.com.");
+        valido = false;
+    }
+
+    if (!validarTelefono(datos.telefono.value)) {
+        mostrarError("error-telefono", "El teléfono debe empezar con 809, 829 o 849 y tener 10 dígitos.");
+        valido = false;
+    }
+
+    if (datos.servicio.value === "") {
+        mostrarError("error-servicio", "Elige el servicio que necesitas.");
+        valido = false;
+    }
+
+    if (datos.marca.value === "") {
+        mostrarError("error-marca", "Elige la marca de tu equipo.");
+        valido = false;
+    }
+
+    if (datos.fecha.value === "") {
+        mostrarError("error-fecha", "Elige la fecha en que traerás el equipo.");
+        valido = false;
+    } else if (esFechaPasada(datos.fecha.value)) {
+        mostrarError("error-fecha", "La fecha no puede ser en el pasado.");
+        valido = false;
+    } else if (esDomingo(datos.fecha.value)) {
+        mostrarError("error-fecha", "Los domingos estamos cerrados. Elige otro día.");
+        valido = false;
+    }
+
+    if (datos.problema.value.trim().length < 10) {
+        mostrarError("error-problema", "Cuéntanos el problema con al menos 10 letras.");
+        valido = false;
+    }
+
+    return valido;
+}
+
+// si todo ta bien enseña el resumen y limpia el formulario, si no, no se envia
+function enviarFormulario(evento) {
+    evento.preventDefault();
+    mensajeExito.textContent = "";
+
+    if (!validarFormulario()) {
+        return;
+    }
+
+    const datos = formulario.elements;
+    const servicio = datos.servicio.options[datos.servicio.selectedIndex].text;
+    const fecha = new Date(datos.fecha.value + "T00:00").toLocaleDateString("es-DO");
+
+    mensajeExito.textContent = `¡Gracias, ${datos.nombre.value.trim()}! Recibimos tu solicitud de ${servicio} para tu equipo ${datos.marca.value} el ${fecha}. Te llamaremos al ${datos.telefono.value.trim()} para confirmar.`;
+    formulario.reset();
+}
+
+// cuando la persona corrige un campo se le quita el error
+function revisarCampo(evento) {
+    const idError = evento.target.getAttribute("aria-describedby");
+    if (idError) {
+        limpiarError(idError);
+    }
+}
+
+if (formulario) {
+    formulario.addEventListener("submit", enviarFormulario);
+    formulario.addEventListener("input", revisarCampo);
+}
