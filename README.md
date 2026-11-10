@@ -54,7 +54,7 @@ sitio-tecnofix/
 | Base | 2. Base | `box-sizing: border-box`, letra `Arial, Helvetica, sans-serif`, imágenes con `max-width: 100%` |
 | Layout | 3. Layout | El `body` es una grilla de 3 filas para que el footer quede abajo; el header y el menú con Flexbox; la portada en 2 columnas (main y aside) |
 | Catálogo | 4. Componentes | Las tarjetas con `grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))` |
-| Estados | 5. Estados | Transiciones en el menú, los botones y las tarjetas; `:focus-visible`; clase `.invalido` y mensajes `.error` |
+| Estados | 5. Estados | Transiciones en el menú y los botones; `:focus-visible`; clase `.invalido` y mensajes `.error` |
 | Modo oscuro | 6. Modo oscuro | `body.oscuro` solo cambia los valores de las variables |
 | Responsive | 7. Responsive | A 768 px la portada pasa a una columna y sale el botón de menú; a 480 px las tarjetas van una por fila y los filtros uno debajo del otro |
 
