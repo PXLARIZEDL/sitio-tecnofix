@@ -12,8 +12,8 @@ TecnoFix RD es un taller pequeño de reparación de laptops y computadoras en Sa
 ![Portada en escritorio](docs/capturas/index-escritorio.png)
 ![Catálogo en escritorio](docs/capturas/servicios-escritorio.png)
 ![Contacto en escritorio](docs/capturas/contacto-escritorio.png)
-![Portada en el celular](docs/capturas/index-movil.jpg)
-![Catálogo en el celular](docs/capturas/servicios-movil.jpg)
+![Portada en el celular](docs/capturas/index-movil.png)
+![Catálogo en el celular](docs/capturas/servicios-movil.png)
 
 ## Estructura de archivos
 
