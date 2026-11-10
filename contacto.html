@@ -52,21 +52,25 @@
         <section id="formulario">
             <h2>Agenda tu reparación</h2>
             <!-- cada campo tiene su label, el for tiene q ser igualito al id -->
-            <form action="contacto.html" method="get">
+            <!-- novalidate pa q los errores los ponga el js en los span y no las burbujas del navegador -->
+            <form class="formulario" action="contacto.html" method="get" novalidate>
                 <fieldset>
                     <legend>Tus datos</legend>
 
                     <p>
                         <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="60">
+                        <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="60" aria-describedby="error-nombre">
+                        <span class="error" id="error-nombre"></span>
                     </p>
                     <p>
                         <label for="correo">Correo</label>
-                        <input type="email" id="correo" name="correo" required>
+                        <input type="email" id="correo" name="correo" required aria-describedby="error-correo">
+                        <span class="error" id="error-correo"></span>
                     </p>
                     <p>
                         <label for="telefono">Teléfono (809-555-1234)</label>
-                        <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" aria-describedby="error-telefono">
+                        <span class="error" id="error-telefono"></span>
                     </p>
                 </fieldset>
 
@@ -75,7 +79,7 @@
 
                     <p>
                         <label for="servicio">Servicio</label>
-                        <select id="servicio" name="servicio" required>
+                        <select id="servicio" name="servicio" required aria-describedby="error-servicio">
                             <option value="">Elige un servicio</option>
                             <optgroup label="Laptop">
                                 <option value="limpieza">Limpieza interna</option>
@@ -97,23 +101,25 @@
                                 <option value="recuperacion">Recuperación de archivos</option>
                             </optgroup>
                         </select>
+                        <span class="error" id="error-servicio"></span>
                     </p>
 
                     <p>Marca del equipo:</p>
                     <p>
-                        <input type="radio" id="marca-hp" name="marca" value="hp" required>
+                        <input type="radio" id="marca-hp" name="marca" value="HP" required aria-describedby="error-marca">
                         <label for="marca-hp">HP</label>
-                        <input type="radio" id="marca-dell" name="marca" value="dell">
+                        <input type="radio" id="marca-dell" name="marca" value="Dell" aria-describedby="error-marca">
                         <label for="marca-dell">Dell</label>
-                        <input type="radio" id="marca-lenovo" name="marca" value="lenovo">
+                        <input type="radio" id="marca-lenovo" name="marca" value="Lenovo" aria-describedby="error-marca">
                         <label for="marca-lenovo">Lenovo</label>
                         <!-- acer y asus tambien llegan bastante al tayer -->
-                        <input type="radio" id="marca-acer" name="marca" value="acer">
+                        <input type="radio" id="marca-acer" name="marca" value="Acer" aria-describedby="error-marca">
                         <label for="marca-acer">Acer</label>
-                        <input type="radio" id="marca-asus" name="marca" value="asus">
+                        <input type="radio" id="marca-asus" name="marca" value="ASUS" aria-describedby="error-marca">
                         <label for="marca-asus">ASUS</label>
-                        <input type="radio" id="marca-otra" name="marca" value="otra">
+                        <input type="radio" id="marca-otra" name="marca" value="Otra" aria-describedby="error-marca">
                         <label for="marca-otra">Otra</label>
+                        <span class="error" id="error-marca"></span>
                     </p>
 
                     <p>
@@ -122,7 +128,8 @@
                     </p>
                     <p>
                         <label for="fecha">Fecha para traerlo</label>
-                        <input type="date" id="fecha" name="fecha" min="2026-11-02" required>
+                        <input type="date" id="fecha" name="fecha" min="2026-11-02" required aria-describedby="error-fecha">
+                        <span class="error" id="error-fecha"></span>
                     </p>
                     <p>
                         <label for="hora">Hora</label>
@@ -134,7 +141,8 @@
                     </p>
                     <p>
                         <label for="problema">Describe el problema</label>
-                        <textarea id="problema" name="problema" rows="4" cols="40" required minlength="10" maxlength="500"></textarea>
+                        <textarea id="problema" name="problema" rows="4" cols="40" required minlength="10" maxlength="500" aria-describedby="error-problema"></textarea>
+                        <span class="error" id="error-problema"></span>
                     </p>
                     <p>
                         <input type="checkbox" id="domicilio" name="domicilio" value="si">
@@ -144,6 +152,8 @@
 
                 <button type="submit">Enviar solicitud</button>
             </form>
+            <!-- aqui sale el mensaje de q todo salio bien, lo llena el js -->
+            <p class="exito" role="status"></p>
         </section>
     </main>
 

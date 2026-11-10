@@ -56,6 +56,25 @@
             </ul>
         </section>
 
+        <section id="catalogo">
+            <h2>Catálogo de servicios</h2>
+            <!-- las tarjetas no estan escritas aqui, las crea el app.js con el arreglo de servicios -->
+            <p class="filtros">
+                <label for="buscar">Buscar</label>
+                <input type="search" id="buscar" placeholder="Ej.: pantalla">
+                <label for="categoria">Categoría</label>
+                <select id="categoria">
+                    <option value="todas">Todas</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="PC de escritorio">PC de escritorio</option>
+                    <option value="Mejoras">Mejoras</option>
+                    <option value="Software y archivos">Software y archivos</option>
+                </select>
+            </p>
+            <p class="contador"></p>
+            <ul class="tarjetas"></ul>
+        </section>
+
         <section id="como-pedir">
             <h2>Cómo pedir una reparación</h2>
             <!-- los pasos si tienen orden, los puse con letra pa variar -->
@@ -94,7 +113,8 @@
 
         <section id="precios">
             <h2>Tabla de precios</h2>
-            <!-- tabla pa datos, nada de maquetar con ella -->
+            <!-- tabla pa datos, nada de maquetar con ella. el div e solo pa q se pueda mover de lao en el celular -->
+            <div class="tabla-contenedor">
             <table>
                 <caption>Precios de mano de obra en pesos dominicanos (RD$), octubre 2026</caption>
                 <thead>
@@ -171,6 +191,7 @@
                     </tr>
                 </tfoot>
             </table>
+            </div>
             <p><a href="media/precios-tecnofix.csv" download>Descargar la lista de precios</a></p>
         </section>
 
