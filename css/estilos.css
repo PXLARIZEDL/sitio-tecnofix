@@ -244,6 +244,11 @@ tbody tr:nth-child(even) {
     background-color: var(--color-suave);
 }
 
+.tarjeta img {
+    width: 100%;
+    border-radius: var(--radio);
+}
+
 .tarjeta h3 {
     margin: 8px 0;
 }

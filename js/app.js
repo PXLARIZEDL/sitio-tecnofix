@@ -174,6 +174,11 @@ function validarFormulario() {
     const datos = formulario.elements;
     let valido = true;
 
+    // primero borro los errores viejos pa q no se queden pegaos
+    formulario.querySelectorAll(".error").forEach(function (span) {
+        limpiarError(span.id);
+    });
+
     if (datos.nombre.value.trim().length < 3) {
         mostrarError("error-nombre", "Escribe tu nombre completo (mínimo 3 letras).");
         valido = false;
