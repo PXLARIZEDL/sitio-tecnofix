@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios y precios | TecnoFix RD</title>
     <meta name="description" content="Lista de servicios y precios de TecnoFix RD: limpieza, cambio de pantalla, teclado, batería, SSD y memoria RAM para laptops y PC.">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/app.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Servicios y precios</h1>
         <nav>
-            <ul>
+            <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu">Menú</button>
+            <ul class="menu" id="menu">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="servicios.html" aria-current="page">Servicios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
+        <button type="button" class="tema-boton">Modo oscuro</button>
     </header>
 
     <main>
@@ -90,7 +94,7 @@
 
         <section id="precios">
             <h2>Tabla de precios</h2>
-            <!-- tabla nomas pa datos, nada de maquetar con ella -->
+            <!-- tabla pa datos, nada de maquetar con ella -->
             <table>
                 <caption>Precios de mano de obra en pesos dominicanos (RD$), octubre 2026</caption>
                 <thead>
@@ -198,10 +202,11 @@
         </section>
     </main>
 
-    <!-- mi nombre y matricula como pidio el profe -->
+    <!-- mi nombre y matricula -->
     <footer>
-        <p>Ricardo Pimentel · Matrícula 2023-3776</p>
+        <p>Ricardo Pimentel · Matrícula 2023-3776 · <span class="anio">2026</span></p>
         <p><small>Sitio hecho para ISW-311 Tecnologías de Internet I.</small></p>
+        <button type="button" class="arriba">Volver arriba</button>
     </footer>
 </body>
 </html>

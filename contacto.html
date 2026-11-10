@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | TecnoFix RD</title>
     <meta name="description" content="Contacta a TecnoFix RD: agenda una reparación con el formulario, llámanos, escríbenos o visítanos en Santo Domingo.">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/app.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Contacto</h1>
         <nav>
-            <ul>
+            <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu">Menú</button>
+            <ul class="menu" id="menu">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.html" aria-current="page">Contacto</a></li>
             </ul>
         </nav>
+        <button type="button" class="tema-boton">Modo oscuro</button>
     </header>
 
     <main>
@@ -145,8 +149,9 @@
 
     <!-- mi nombre y matricula como pidio el profe -->
     <footer>
-        <p>Ricardo Pimentel · Matrícula 2023-3776</p>
+        <p>Ricardo Pimentel · Matrícula 2023-3776 · <span class="anio">2026</span></p>
         <p><small>Sitio hecho para ISW-311 Tecnologías de Internet I.</small></p>
+        <button type="button" class="arriba">Volver arriba</button>
     </footer>
 </body>
 </html>

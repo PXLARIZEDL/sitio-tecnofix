@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TecnoFix RD | Reparación de computadoras en Santo Domingo</title>
     <meta name="description" content="TecnoFix RD es un taller de reparación de laptops y computadoras en Santo Domingo. Diagnóstico, limpieza, cambio de piezas y más.">
+    <!-- el css y el js van aparte, el defer e pa q el script corra cuando ya cargo el html -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/app.js" defer></script>
 </head>
-<body>
+<body class="portada">
     <header>
         <h1>TecnoFix RD</h1>
-        <p>Tu computadora en buenas manos</p>
-        <!-- el menu e el mismo en las 3 paginas pa q uno no se pierda -->
+        <!-- el menu e el mismo en las 3 paginas pa q uno no se pierda, aria-current marca donde uno ta -->
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
+            <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu">Menú</button>
+            <ul class="menu" id="menu">
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
+        <button type="button" class="tema-boton">Modo oscuro</button>
     </header>
 
     <main>
@@ -60,18 +64,19 @@
             <p>Publicado el <time datetime="2026-10-20">20 de octubre de 2026</time></p>
             <p>A partir del <time datetime="2026-11-07">sábado 7 de noviembre</time> el taller abre los sábados de <time datetime="09:00">9:00 a. m.</time> a <time datetime="13:00">1:00 p. m.</time> para los que trabajan en la semana.</p>
         </article>
-
-        <!-- el consejo e aparte del tema, x eso aside -->
-        <aside>
-            <h2>Consejo rápido</h2>
-            <p>Antes de traer tu laptop haz una copia de tus archivos. Si usas Windows, abre el explorador con <kbd>Windows</kbd> + <kbd>E</kbd> y copia tus documentos a una memoria USB.</p>
-        </aside>
     </main>
 
-    <!-- mi nombre y matricula como pidio el profe -->
+    <!-- el consejo e aparte del tema, x eso aside. lo saque del main pa q quede en la columna de al lado -->
+    <aside>
+        <h2>Consejo rápido</h2>
+        <p>Antes de traer tu laptop haz una copia de tus archivos. Si usas Windows, abre el explorador con <kbd>Windows</kbd> + <kbd>E</kbd> y copia tus documentos a una memoria USB.</p>
+    </aside>
+
+    <!-- mi nombre y matricula como pidio el profe, el año lo pone el js -->
     <footer>
-        <p>Ricardo Pimentel · Matrícula 2023-3776</p>
+        <p>Ricardo Pimentel · Matrícula 2023-3776 · <span class="anio">2026</span></p>
         <p><small>Sitio hecho para ISW-311 Tecnologías de Internet I.</small></p>
+        <button type="button" class="arriba">Volver arriba</button>
     </footer>
 </body>
 </html>
