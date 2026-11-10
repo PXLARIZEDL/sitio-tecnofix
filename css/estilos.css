@@ -32,10 +32,6 @@ body {
     background-color: var(--color-fondo);
 }
 
-h2 {
-    color: var(--color-principal);
-}
-
 a {
     color: var(--color-principal);
 }
@@ -82,7 +78,6 @@ header {
 
 header h1 {
     margin: 0 auto 0 0;
-    color: var(--color-principal);
 }
 
 .menu {
@@ -205,7 +200,6 @@ caption {
     padding: 8px;
     font-weight: bold;
     text-align: left;
-    color: var(--color-principal);
 }
 
 th,
@@ -255,7 +249,6 @@ tbody tr:nth-child(even) {
 
 .precio {
     font-weight: bold;
-    color: var(--color-principal);
 }
 
 /* formulario */
@@ -331,15 +324,6 @@ button {
 
 button:hover {
     opacity: 0.85;
-}
-
-/* la tarjeta sube un chin al pasarle el mouse */
-.tarjeta {
-    transition: transform 0.3s;
-}
-
-.tarjeta:hover {
-    transform: translateY(-4px);
 }
 
 /* el borde q se ve cuando uno navega con el teclado (tab) */
