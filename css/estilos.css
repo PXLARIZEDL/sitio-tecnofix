@@ -303,3 +303,88 @@ input[type="checkbox"] + label {
 .filtros select {
     width: auto;
 }
+
+/* 5. Estados (hover, foco y errores) */
+.menu a {
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: var(--color-borde);
+}
+
+/* la pagina donde uno ta sale marcada */
+.menu a[aria-current="page"] {
+    font-weight: bold;
+    color: var(--color-fondo);
+    background-color: var(--color-principal);
+}
+
+button {
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* la tarjeta sube un chin al pasarle el mouse */
+.tarjeta {
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+}
+
+/* el borde q se ve cuando uno navega con el teclado (tab) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--color-principal);
+    outline-offset: 2px;
+}
+
+/* esta clase la pone el js cuando un campo ta mal */
+.invalido {
+    border-color: var(--color-error);
+}
+
+.error {
+    display: block;
+    min-height: 1.2em;
+    font-size: 0.9rem;
+    color: var(--color-error);
+}
+
+.exito {
+    font-weight: bold;
+    color: var(--color-exito);
+}
+
+/* boton de volver arriba, fijo abajo a la derecha y escondido hasta q uno baje */
+.arriba {
+    display: none;
+    position: fixed;
+    right: var(--espacio);
+    bottom: var(--espacio);
+}
+
+.arriba.visible {
+    display: block;
+}
+
+/* 6. Modo oscuro */
+/* solo cambio los valores de las variables, las reglas de arriba son las mismas */
+body.oscuro {
+    --color-fondo: #121212;
+    --color-texto: #eeeeee;
+    --color-principal: #7ab0ff;
+    --color-suave: #1e1e1e;
+    --color-borde: #444444;
+    --color-error: #ff7070;
+    --color-exito: #6fcf73;
+}
