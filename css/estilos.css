@@ -388,3 +388,52 @@ body.oscuro {
     --color-error: #ff7070;
     --color-exito: #6fcf73;
 }
+
+/* 7. Responsive */
+/* tablet y celular: la portada en una columna y el menu se vuelve boton */
+@media (max-width: 768px) {
+    .portada {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-boton {
+        display: block;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        margin-top: 8px;
+    }
+
+    .menu.abierto {
+        display: flex;
+    }
+}
+
+/* celular chiquito: el titulo en su fila, una tarjeta x fila y los filtros uno debajo del otro */
+@media (max-width: 480px) {
+    header h1 {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtros input,
+    .filtros select {
+        width: 100%;
+    }
+}
