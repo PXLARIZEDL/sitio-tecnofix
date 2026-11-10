@@ -2,3 +2,60 @@
    estilos.css - TecnoFix RD
    una sola hoja pa las 3 paginas, la dividi x secciones
    ========================================================= */
+
+/* 1. Variables */
+/* los colores y medidas q se repiten, si cambio uno aqui cambia en to el sitio */
+:root {
+    --color-fondo: #ffffff;
+    --color-texto: #222222;
+    --color-principal: #1e5aa8;
+    --color-suave: #f2f4f7;
+    --color-borde: #d0d5dd;
+    --color-error: #c62828;
+    --color-exito: #2e7d32;
+    --fuente: Arial, Helvetica, sans-serif;
+    --espacio: 16px;
+    --radio: 6px;
+}
+
+/* 2. Base */
+/* border-box pa q el padding y el borde no le sumen al ancho */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente);
+    line-height: 1.5;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+h2 {
+    color: var(--color-principal);
+}
+
+a {
+    color: var(--color-principal);
+}
+
+/* nada subrayado */
+a,
+ins,
+abbr {
+    text-decoration: none;
+}
+
+/* q las fotos y el video nunca se salgan de la pantalla */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid var(--color-borde);
+}
